@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bebo Aura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffffff);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 26px;
+      font-weight: 600;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      background: #f5f5f5;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .price {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ff69b4;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    .order-section {
+      background: white;
+      margin: 30px 20px;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 15px;
+      border: 1px solid #ddd;
+      font-family: 'Poppins';
+    }
+
+    button.submit-btn {
+      width: 100%;
+      background: #ff69b4;
+      color: white;
+      padding: 10px;
+      border-radius: 25px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>Bebo Aura</header>
+
+<div class="cart">Cart: <span id="cart-count">0</span></div>
+
+<h2 class="section-title">Shop Categories</h2>
+
+<div class="products">
+
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Earrings</h3>
+    <div class="price">Rs. 450</div>
+    <button class="btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Pendant</h3>
+    <div class="price">Rs. 550</div>
+    <button class="btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Bracelet</h3>
+    <div class="price">Rs. 650</div>
+    <button class="btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Rings</h3>
+    <div class="price">Rs. 350</div>
+    <button class="btn" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+</div>
+
+<div class="order-section">
+  <h2>Checkout</h2>
+
+  <form name="order-form" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="order-form">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" placeholder="Delivery Address" required>
+
+    <select name="payment" required>
+      <option value="">Select Payment Method</option>
+      <option>Cash on Delivery</option>
+      <option>Online Payment</option>
+    </select>
+
+    <button type="submit" class="submit-btn">Place Order</button>
+  </form>
+</div>
+
+<footer>
+© 2026 Bebo Aura
+</footer>
+
+<script>
+  let count = 0;
+  function addToCart() {
+    count++;
+    document.getElementById("cart-count").innerText = count;
+  }
+</script>
+
+</body>
+</html><div class="products">
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Bangles</h3><div class="price">Rs. 500</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Bracelet</h3><div class="price">Rs. 550</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Waist Chain</h3><div class="price">Rs. 700</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Rings</h3><div class="price">Rs. 350</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Nails</h3><div class="price">Rs. 400</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Pendants</h3><div class="price">Rs. 600</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Handchains</h3><div class="price">Rs. 650</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Hair Accessories</h3><div class="price">Rs. 450</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Keychain</h3><div class="price">Rs. 300</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Anklet</h3><div class="price">Rs. 500</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Arm Cuffs</h3><div class="price">Rs. 650</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Ear Cuffs</h3><div class="price">Rs. 480</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Crown</h3><div class="price">Rs. 1200</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>3 Pieces Sets</h3><div class="price">Rs. 1500</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Jhumke</h3><div class="price">Rs. 550</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Earrings</h3><div class="price">Rs. 450</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Ear Sets</h3><div class="price">Rs. 900</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
+
+</div>
