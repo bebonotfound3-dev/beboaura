@@ -1,48 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bebo Aura</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <style>
-
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #fff0f5, #ffffff);
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5; /* soft girly pink */
       color: #333;
     }
 
+    /* --- Hero / Entrance --- */
     header {
+      background: linear-gradient(135deg, #ffd6eb, #ffe0f0);
       text-align: center;
-      padding: 20px;
-      font-size: 26px;
-      font-weight: 600;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-family: 'Cursive', sans-serif;
+      color: #d63384;
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #8b3a5b;
+      margin-top: 10px;
     }
 
-    .section-title {
+    /* --- Section Title --- */
+    section h2 {
       text-align: center;
-      margin: 30px 0 10px;
-      font-weight: 500;
-      font-size: 20px;
+      font-family: 'Cursive', sans-serif;
+      font-size: 2rem;
+      color: #d63384;
+      margin-top: 40px;
+      margin-bottom: 20px;
     }
 
+    /* --- Products Grid --- */
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      padding: 20px;
+      padding: 0 10px 40px 10px;
     }
 
     .product-card {
-      background: white;
-      border-radius: 20px;
-      padding: 15px;
+      background-color: #ffe6f0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 180px;
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: 0.3s;
+      padding: 15px;
+      transition: transform 0.2s;
     }
 
     .product-card:hover {
@@ -51,232 +66,217 @@
 
     .product-card img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 15px;
-      background: #f5f5f5;
+      border-radius: 10px;
     }
 
     .product-card h3 {
-      margin: 10px 0 5px;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .price {
-      font-size: 14px;
-      margin-bottom: 8px;
+      margin: 10px 0;
+      font-family: 'Cursive', sans-serif;
+      font-size: 1.1rem;
+      color: #d63384;
     }
 
     .btn {
-      background: #ff69b4;
+      background-color: #d63384;
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 25px;
-      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
+      margin-top: 5px;
     }
 
-    .cart {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #ff69b4;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 30px;
-      font-size: 14px;
+    .btn:hover {
+      background-color: #b52c72;
     }
-
-    .order-section {
-      background: white;
-      margin: 30px 20px;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 15px;
-      border: 1px solid #ddd;
-      font-family: 'Poppins';
-    }
-
-    button.submit-btn {
-      width: 100%;
-      background: #ff69b4;
-      color: white;
-      padding: 10px;
-      border-radius: 25px;
-      border: none;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-    }
-
   </style>
 </head>
-
 <body>
 
-<header>Bebo Aura</header>
+  <!-- --- Hero / Entrance Section --- -->
+  <header>
+    <h1>Bebo Aura</h1>
+    <p>Your Cute & Minimal Jewelry Shop ✨</p>
+  </header>
 
-<div class="cart">Cart: <span id="cart-count">0</span></div>
+  <!-- --- Function to Add to Cart --- -->
+  <script>
+    function addToCart() {
+      alert('Product added to cart! Cash on Delivery available.');
+    }
+  </script>
 
-<h2 class="section-title">Shop Categories</h2>
-<div class="products">
-<div class="products">
-  <div class="product-card">
-    <img src="https://i.ibb.co/new1.jpg" alt="Earring">
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+  <!-- --- All Categories --- -->
+  <section>
+    <h2>Bangles</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example1.jpg" alt="Bangle">
+        <h3>Bangle</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/example2.jpg" alt="Bangle">
+        <h3>Bangle</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <!-- Copy & paste more product-card blocks here for unlimited Bangles -->
+    </div>
 
-  <h2>Earrings</h2>
-<div class="products">
+    <h2>Bracelet</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example3.jpg" alt="Bracelet">
+        <h3>Bracelet</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/example4.jpg" alt="Bracelet">
+        <h3>Bracelet</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <!-- Copy & paste more product-card blocks here for unlimited Bracelets -->
+    </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/example1.jpg" alt="Earring">
-    <h3>Earring</h3>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Waist Chain</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example5.jpg" alt="Waist Chain">
+        <h3>Waist Chain</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <!-- Add unlimited product-card blocks here -->
+    </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/example2.jpg" alt="Earring">
-    <h3>Earring</h3>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Rings</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example6.jpg" alt="Ring">
+        <h3>Ring</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <!-- Add unlimited Rings -->
+    </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/example3.jpg" alt="Earring">
-    <h3>Earring</h3>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Nails</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example7.jpg" alt="Nail">
+        <h3>Nail</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/example4.jpg" alt="Earring">
-     
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Pendants</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example8.jpg" alt="Pendant">
+        <h3>Pendant</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/example5.jpg" alt="Earring">
+    <h2>Handchains</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example9.jpg" alt="Handchain">
+        <h3>Handchain</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
-  
-</div>
+    <h2>Hair Accessories</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example10.jpg" alt="Hair Accessory">
+        <h3>Hair Accessory</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-  <div class="product-card">
-  <img src="https://i.ibb.co/example4.jpg" alt="Earring">
-  <h3>Earring</h3>
-  <button class="btn" onclick="addToCart()">Add to Cart</button>
-</div>
+    <h2>Keychain</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example11.jpg" alt="Keychain">
+        <h3>Keychain</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-<div class="product-card">
-  <img src="https://i.ibb.co/example5.jpg" alt="Earring">
-  <h3>Earring</h3>
-  <button class="btn" onclick="addToCart()">Add to Cart</button>
-</div>
-  
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Pendant</h3>
-    <div class="price">Rs. 550</div>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Anklet</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example12.jpg" alt="Anklet">
+        <h3>Anklet</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Bracelet</h3>
-    <div class="price">Rs. 650</div>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Arm Cuffs</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example13.jpg" alt="Arm Cuff">
+        <h3>Arm Cuff</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Rings</h3>
-    <div class="price">Rs. 350</div>
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-  </div>
+    <h2>Ear Cuffs</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example14.jpg" alt="Ear Cuff">
+        <h3>Ear Cuff</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-</div>
+    <h2>Crown</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example15.jpg" alt="Crown">
+        <h3>Crown</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-<div class="order-section">
-  <h2>Checkout</h2>
+    <h2>3 Pieces Sets</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example16.jpg" alt="3 Pieces Set">
+        <h3>3 Pieces Set</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-  <form name="order-form" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="order-form">
+    <h2>Jhumke</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example17.jpg" alt="Jhumke">
+        <h3>Jhumke</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="text" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="address" placeholder="Delivery Address" required>
+    <h2>Earrings</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example18.jpg" alt="Earring">
+        <h3>Earring</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-    <select name="payment" required>
-      <option value="">Select Payment Method</option>
-      <option>Cash on Delivery</option>
-      <option>Online Payment</option>
-    </select>
+    <h2>Ear Sets</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://i.ibb.co/example19.jpg" alt="Ear Set">
+        <h3>Ear Set</h3>
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-    <button type="submit" class="submit-btn">Place Order</button>
-  </form>
-</div>
-
-<footer>
-© 2026 Bebo Aura
-</footer>
-
-<script>
-  let count = 0;
-  function addToCart() {
-    count++;
-    document.getElementById("cart-count").innerText = count;
-  }
-</script>
+  </section>
 
 </body>
-</html><div class="products">
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Bangles</h3><div class="price">Rs. 500</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Bracelet</h3><div class="price">Rs. 550</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Waist Chain</h3><div class="price">Rs. 700</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Rings</h3><div class="price">Rs. 350</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Nails</h3><div class="price">Rs. 400</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Pendants</h3><div class="price">Rs. 600</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Handchains</h3><div class="price">Rs. 650</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Hair Accessories</h3><div class="price">Rs. 450</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Keychain</h3><div class="price">Rs. 300</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Anklet</h3><div class="price">Rs. 500</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Arm Cuffs</h3><div class="price">Rs. 650</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Ear Cuffs</h3><div class="price">Rs. 480</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Crown</h3><div class="price">Rs. 1200</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>3 Pieces Sets</h3><div class="price">Rs. 1500</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Jhumke</h3><div class="price">Rs. 550</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Earrings</h3><div class="price">Rs. 450</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-  <div class="product-card"><img src="https://via.placeholder.com/200"><h3>Ear Sets</h3><div class="price">Rs. 900</div><button class="btn" onclick="addToCart()">Add to Cart</button></div>
-
-</div>
+</html>
